@@ -1,0 +1,103 @@
+#root {
+  width: 100%;
+  max-width: 1100px;
+  text-align: left;
+  border-inline: none;
+  padding: 32px 24px;
+  box-sizing: border-box;
+}
+
+.report header {
+  margin-bottom: 24px;
+}
+
+.report h1 {
+  font-size: 32px;
+  letter-spacing: -0.6px;
+  margin: 0 0 8px;
+}
+
+.report .subtitle {
+  max-width: 70ch;
+  margin-bottom: 16px;
+}
+
+.report .controls {
+  display: flex;
+  gap: 16px;
+  font-size: 14px;
+  align-items: center;
+}
+
+.report .controls label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  color: var(--text-h);
+}
+
+.report .error {
+  padding: 12px 16px;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  border-radius: 6px;
+  color: var(--text-h);
+}
+
+.report table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+  font-size: 14px;
+}
+
+.report th,
+.report td {
+  padding: 10px 12px;
+  text-align: right;
+  border-bottom: 1px solid var(--border);
+}
+
+.report thead th {
+  text-align: right;
+  color: var(--text-h);
+  font-weight: 500;
+  border-bottom: 2px solid var(--border);
+}
+
+.report th[scope='row'],
+.report thead th:first-child {
+  text-align: left;
+}
+
+.report tr.total th,
+.report tr.total td {
+  border-top: 2px solid var(--border);
+  border-bottom: none;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.report td.best {
+  color: #1b8f3a;
+  font-weight: 600;
+}
+
+.report td.worst {
+  color: #b1492f;
+}
+
+.report td.na {
+  color: var(--text);
+  opacity: 0.5;
+}
+
+@media (prefers-color-scheme: dark) {
+  .report td.best {
+    color: #64d68a;
+  }
+  .report td.worst {
+    color: #f08b6e;
+  }
+}

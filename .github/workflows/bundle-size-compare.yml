@@ -1,0 +1,17 @@
+name: Bundle Size Compare
+
+on: pull_request
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Compare bundle size
+        run: yarn monosize compare-reports --branch main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
